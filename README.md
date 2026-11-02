@@ -1,4 +1,4 @@
-# Proxy Android
+# Proxy Android (v2)
 
 Projeto Android nativo em Kotlin, com interface de painel e integração inicial de autorização/estado do Shizuku.
 
@@ -7,6 +7,12 @@ Projeto Android nativo em Kotlin, com interface de painel e integração inicial
 2. Abra a aba **Actions**.
 3. Execute **Build APK** (ou aguarde o build automático após enviar para `main`/`master`).
 4. Abra a execução concluída e baixe o artefato **ProxyAndroid-debug**.
+
+## Novidades da v2
+- **Conexão com o Shizuku corrigida**: o `ShizukuProvider` agora está declarado no `AndroidManifest.xml` (sem ele o app nunca recebia a conexão e ficava sempre Offline). O status também atualiza sozinho quando o Shizuku liga/desliga.
+- **Tela cheia**: o app agora desenha por baixo da barra de status/navegação e do notch. Para esconder também as barras (modo imersivo), troque `telaCheiaImersiva` para `true` no `MainActivity.kt`.
+- **Novo visual** (tema roxo neon, cartão de conexão, animações).
+- **Menu dos 3 traços**: painel lateral só com as funções principais e a conexão.
 
 ## Shizuku
 O app verifica se o Binder do Shizuku está ativo e solicita a autorização da API. Em Android 11 ou superior, o Shizuku pode ser iniciado usando Depuração sem fio, pelo próprio app Shizuku.

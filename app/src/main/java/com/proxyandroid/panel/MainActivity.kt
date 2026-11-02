@@ -3,22 +3,17 @@ package com.proxyandroid.panel
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import rikka.shizuku.Shizuku
-import rikka.shizuku.Shizuku.OnBinderDeadListener
-import rikka.shizuku.Shizuku.OnBinderReceivedListener
-import rikka.shizuku.ShizukuRequestPermissionResultListener
 
 class MainActivity : AppCompatActivity() {
 
-    private val permissionListener = object : ShizukuRequestPermissionResultListener {
-        override fun onRequestPermissionResult(requestCode: Int, grantResult: Int) {}
+    private val permissionListener = Shizuku.OnRequestPermissionResultListener { _, _ -> }
+
+    private val binderReceivedListener = Shizuku.OnBinderReceivedListener {
+        // Shizuku pronto
     }
 
-    private val binderReceivedListener = object : OnBinderReceivedListener {
-        override fun onBinderReceived() {}
-    }
-
-    private val binderDeadListener = object : OnBinderDeadListener {
-        override fun onBinderDead() {}
+    private val binderDeadListener = Shizuku.OnBinderDeadListener {
+        // Shizuku morreu
     }
 
     private val CODE = 1000

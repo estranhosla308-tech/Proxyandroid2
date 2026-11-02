@@ -61,3 +61,4 @@ class MainActivity : AppCompatActivity() {
         Shizuku.removeRequestPermissionResultListener(permissionResultListener)
     }
 }
+

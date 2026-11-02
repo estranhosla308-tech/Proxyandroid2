@@ -1,14 +1,16 @@
-package com.proxyandroid.panel
+9package com.proxyandroid.panel
+
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import rikka.shizuku.Shizuku
+
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val tv = TextView(this)
-        tv.text = "Se voce esta lendo isso, NAO crashou!"
-        tv.textSize = 24f
-        tv.setPadding(50,200,50,50)
-        setContentView(tv)
-    }
-}
+
+    private lateinit var tv: TextView
+    private val reqCode = 1000
+
+    private val permListener = Shizuku.OnRequestPermission
+
+kt
